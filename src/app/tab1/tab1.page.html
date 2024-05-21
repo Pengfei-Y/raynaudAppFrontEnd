@@ -1,0 +1,51 @@
+<ion-header [translucent]="true" style="background: #3880ff" collapse="fade">
+    <ion-toolbar>
+        <ion-title>hello {{user.username}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-list style="padding:10px 20px 0 0">
+        <ion-item *ngFor="let item of records">
+            <ion-label>
+                <span> {{item.attackDate|date:'MM-dd-yyyy HH:mm'}}</span>
+                <b style="margin-left: 10px"> {{item.location}}</b>
+            </ion-label>
+            <ion-note slot="end">
+                <ion-button (click)="edit(item)">Edit</ion-button>
+            </ion-note>
+        </ion-item>
+    </ion-list>
+    <ion-icon (click)="add()" class="add" color="primary" name="add-circle-outline"></ion-icon>
+    <ion-modal [isOpen]="isModalOpen">
+        <ng-template>
+            <ion-header>
+                <ion-toolbar>
+                    <ion-title>Add/Edit Record</ion-title>
+                    <ion-buttons slot="end">
+                        <ion-button (click)="setOpen(false)">Close</ion-button>
+                    </ion-buttons>
+                </ion-toolbar>
+            </ion-header>
+            <ion-content class="ion-padding">
+                <ion-item>
+                    <ion-datetime-button datetime="datetime"></ion-datetime-button>
+                    <ion-modal [keepContentsMounted]="true">
+                        <ng-template>
+                            <ion-datetime locale="en" [(ngModel)]="selectRecord.attackDate" id="datetime"></ion-datetime>
+                        </ng-template>
+                    </ion-modal>
+                </ion-item>
+                <ion-item>
+                    <ion-select style="width: 100%" [(ngModel)]="selectRecord.location" placeholder="please select the location">
+                        <ion-select-option value="inside">inside</ion-select-option>
+                        <ion-select-option value="outside">outside</ion-select-option>
+                    </ion-select>
+                </ion-item>
+                <div style="margin-top: 30px;text-align:center;">
+                    <ion-button [disabled]="!selectRecord.location" style="width: 300px" (click)="post()">Post</ion-button>
+                </div>
+            </ion-content>
+        </ng-template>
+    </ion-modal>
+</ion-content>
