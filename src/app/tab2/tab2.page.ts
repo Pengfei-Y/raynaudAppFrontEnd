@@ -37,7 +37,7 @@ export class Tab2Page {
                     yAxis: {},
                     series: [
                         {
-                            name: '销量',
+                            name: 'count',
                             type: 'bar',
                             data: records
                         }
