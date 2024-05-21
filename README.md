@@ -30,5 +30,9 @@ You should use the following hybrid mobile frameworks to finish the mobile app p
 
 ![Example Image](https://github.com/Pengfei-Y/raynaudAppFrontEnd/blob/main/img/%E6%88%AA%E5%B1%8F2024-05-21%20%E4%B8%8B%E5%8D%883.05.09.png)
 
+![Example Image](https://github.com/Pengfei-Y/raynaudAppFrontEnd/blob/main/img/%E6%88%AA%E5%B1%8F2024-05-21%20%E4%B8%8B%E5%8D%883.05.35.png)
+
+![Example Image](https://github.com/Pengfei-Y/raynaudAppFrontEnd/blob/main/img/%E6%88%AA%E5%B1%8F2024-05-21%20%E4%B8%8B%E5%8D%883.07.03.png)
+
 
 
