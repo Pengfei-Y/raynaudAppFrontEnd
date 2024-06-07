@@ -43,7 +43,7 @@ export class Tab1Page {
         this.setOpen(true)
     }
     post(){
-        const attackDate = moment(this.selectRecord.attackDate).format('yyyy-M-DD HH:mm');
+        const attackDate = moment(this.selectRecord.attackDate).utc().format('yyyy-M-DD HH:mm');
         if (this.selectRecord.attackId){
             this.http.editAttack({ ...this.selectRecord, participantId: localStorage.getItem('participantId'), attackDate })
                 .subscribe( async (res)=>{
@@ -78,7 +78,7 @@ export class Tab1Page {
         this.getRecords();
     }
     getRecords() {
-        const attackDate = moment().format('yyyy-M-DD')
+        const attackDate = moment().utc().format('yyyy-M-DD')
         this.http.getRecords({ participantId: localStorage.getItem('participantId'), attackDate })
             .subscribe((res: any) => {
                 console.log(res);
